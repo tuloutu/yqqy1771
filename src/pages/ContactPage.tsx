@@ -63,37 +63,40 @@ function ContactPage() {
           </div>
 
           <div>
-            <h2 className="text-3xl font-bold mb-8 text-[#333333] font-['PingFang_SC']">关注我们</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6">
-              <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg text-center">
-                <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-100 rounded-lg mx-auto mb-4 flex items-center justify-center overflow-hidden">
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-[#333333] font-['PingFang_SC']">关注我们</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6">
+              <div className="bg-white rounded-xl p-5 md:p-6 shadow-lg hover:shadow-xl transition-shadow text-center flex flex-col items-center">
+                <div className="w-40 h-40 md:w-44 md:h-44 bg-[#f5f0f0] rounded-xl mb-4 overflow-hidden flex items-center justify-center p-3">
                   <img 
                     src="./Official Account.jpg" 
                     alt="微信公众号二维码"
-                    className="w-full h-full object-contain"
+                    className="max-w-full max-h-full object-contain"
                   />
                 </div>
                 <h3 className="font-bold text-base md:text-lg text-[#333333]">微信公众号</h3>
+                <p className="text-xs text-gray-400 mt-1">扫码关注公众号</p>
               </div>
-              <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg text-center">
-                <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-100 rounded-lg mx-auto mb-4 flex items-center justify-center overflow-hidden">
+              <div className="bg-white rounded-xl p-5 md:p-6 shadow-lg hover:shadow-xl transition-shadow text-center flex flex-col items-center">
+                <div className="w-40 h-40 md:w-44 md:h-44 bg-[#f5f0f0] rounded-xl mb-4 overflow-hidden flex items-center justify-center p-3">
                   <img 
                     src="./redbook.png" 
                     alt="小红书二维码"
-                    className="w-full h-full object-contain"
+                    className="max-w-full max-h-full object-contain"
                   />
                 </div>
                 <h3 className="font-bold text-base md:text-lg text-[#333333]">小红书</h3>
+                <p className="text-xs text-gray-400 mt-1">扫码关注小红书</p>
               </div>
-              <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg text-center col-span-2 md:col-span-1">
-                <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-100 rounded-lg mx-auto mb-4 flex items-center justify-center overflow-hidden">
+              <div className="bg-white rounded-xl p-5 md:p-6 shadow-lg hover:shadow-xl transition-shadow text-center flex flex-col items-center">
+                <div className="w-40 h-40 md:w-44 md:h-44 bg-[#f5f0f0] rounded-xl mb-4 overflow-hidden flex items-center justify-center p-3">
                   <img 
                     src="./foreign-wechat.png" 
                     alt="海外客户联系微信"
-                    className="w-full h-full object-contain"
+                    className="max-w-full max-h-full object-contain"
                   />
                 </div>
                 <h3 className="font-bold text-base md:text-lg text-[#333333]">海外客户微信</h3>
+                <p className="text-xs text-gray-400 mt-1">扫码添加微信</p>
               </div>
             </div>
             <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
