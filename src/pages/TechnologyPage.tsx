@@ -47,7 +47,7 @@ function TechnologyPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="relative group overflow-hidden rounded-2xl shadow-xl">
               <img
-                src="/cases/背景1.jpg"
+                src="./cases/背景1.jpg"
                 alt="标准化工艺流程"
                 className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
               />
@@ -59,7 +59,7 @@ function TechnologyPage() {
             </div>
             <div className="relative group overflow-hidden rounded-2xl shadow-xl">
               <img
-                src="/cases/背景2.jpg"
+                src="./cases/背景2.jpg"
                 alt="专业生产车间"
                 className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
               />
@@ -71,7 +71,7 @@ function TechnologyPage() {
             </div>
             <div className="relative group overflow-hidden rounded-2xl shadow-xl">
               <img
-                src="/cases/背景3.jpg"
+                src="./cases/背景3.jpg"
                 alt="精密的生产仪器"
                 className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
               />
@@ -83,7 +83,7 @@ function TechnologyPage() {
             </div>
             <div className="relative group overflow-hidden rounded-2xl shadow-xl">
               <img
-                src="/cases/背景4 .jpg"
+                src="./cases/背景4 .jpg"
                 alt="存储环境"
                 className="w-full h-80 object-cover transition-transform duration-300 group-hover:scale-105"
               />

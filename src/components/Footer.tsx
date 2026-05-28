@@ -38,7 +38,7 @@ const Footer = () => {
                 <span className="text-sm">WhatsApp: 海外客户专线</span>
               </a>
               <a 
-                href="/foreign-wechat.png" 
+                href="./foreign-wechat.png" 
                 target="_blank"
                 className="flex items-center text-gray-300 hover:text-[#862828] transition-colors"
               >

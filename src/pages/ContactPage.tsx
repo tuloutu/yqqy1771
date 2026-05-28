@@ -68,7 +68,7 @@ function ContactPage() {
               <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg text-center">
                 <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-100 rounded-lg mx-auto mb-4 flex items-center justify-center overflow-hidden">
                   <img 
-                    src="/Official Account.jpg" 
+                    src="./Official Account.jpg" 
                     alt="微信公众号二维码"
                     className="w-full h-full object-contain"
                   />
@@ -78,7 +78,7 @@ function ContactPage() {
               <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg text-center">
                 <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-100 rounded-lg mx-auto mb-4 flex items-center justify-center overflow-hidden">
                   <img 
-                    src="/redbook.png" 
+                    src="./redbook.png" 
                     alt="小红书二维码"
                     className="w-full h-full object-contain"
                   />
@@ -88,7 +88,7 @@ function ContactPage() {
               <div className="bg-white rounded-xl p-4 md:p-6 shadow-lg text-center col-span-2 md:col-span-1">
                 <div className="w-32 h-32 md:w-48 md:h-48 bg-gray-100 rounded-lg mx-auto mb-4 flex items-center justify-center overflow-hidden">
                   <img 
-                    src="/foreign-wechat.png" 
+                    src="./foreign-wechat.png" 
                     alt="海外客户联系微信"
                     className="w-full h-full object-contain"
                   />

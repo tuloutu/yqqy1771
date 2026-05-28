@@ -22,7 +22,7 @@ export const products: Product[] = [
     id: "1",
     name: "微醺杨枝甘露",
     description: "芒果 · 8%vol",
-    image: "/images/products/芒芒很快乐.jpg",
+    image: "./images/products/芒芒很快乐.jpg",
     detail: "果香四溢，一口点亮平淡生活的微醺感",
     features: [
       "伏特加、芒果汁、橙子汁、青柠汁",
@@ -45,7 +45,7 @@ export const products: Product[] = [
     id: "2",
     name: "空山新雨后",
     description: "青瓜柠檬 · 6%vol",
-    image: "/images/products/空山新雨后.jpg",
+    image: "./images/products/空山新雨后.jpg",
     detail: "雨后山风般清爽，洗去油腻，酸冽回甘",
     features: [
       "伏特加、气泡水、黄瓜汁、青柠汁",
@@ -68,7 +68,7 @@ export const products: Product[] = [
     id: "3",
     name: "蓝色海洋",
     description: "凤梨、青柠 · 6%vol",
-    image: "/images/products/蓝色海洋.jpg",
+    image: "./images/products/蓝色海洋.jpg",
     detail: "热带蔚蓝颜值款，海风与果香交织，出片率满分",
     features: [
       "伏特加、白朗姆、凤梨汁、青柠汁",
@@ -91,7 +91,7 @@ export const products: Product[] = [
     id: "4",
     name: "不吃香菜",
     description: "百香果 · 5%vol",
-    image: "/images/products/不吃香菜.jpg",
+    image: "./images/products/不吃香菜.jpg",
     detail: "热恋般酸甜碰撞，跨界适配性强",
     features: [
       "伏特加、白朗姆、百香果、青柠汁",
@@ -114,7 +114,7 @@ export const products: Product[] = [
     id: "5",
     name: "香草话梅",
     description: "话梅 · 5%vol",
-    image: "/images/products/樱桃小丸子.jpg",
+    image: "./images/products/樱桃小丸子.jpg",
     detail: "香草话梅风味，主成分话梅，经典果酒风味",
     features: [
       "伏特加、话梅汁、香草、乳酸菌",
@@ -137,7 +137,7 @@ export const products: Product[] = [
     id: "6",
     name: "少女的心事",
     description: "草莓 · 3%vol",
-    image: "/images/products/少女的心事.jpg",
+    image: "./images/products/少女的心事.jpg",
     detail: "泡泡藏着温柔心事，酸涩交织草莓甜",
     features: [
       "伏特加、草莓汁、乳酸菌",
@@ -160,7 +160,7 @@ export const products: Product[] = [
     id: "7",
     name: "溺海",
     description: "蓝莓、桑葚 · 5%vol",
-    image: "/images/products/溺海.jpg",
+    image: "./images/products/溺海.jpg",
     detail: "坠入蓝色深海的醇厚，多重莓果层次感",
     features: [
       "伏特加、蓝莓汁、桑葚汁、树莓汁",
@@ -183,7 +183,7 @@ export const products: Product[] = [
     id: "8",
     name: "柚柚红茶",
     description: "西柚 · 6%vol",
-    image: "/images/products/孤寂冰川.jpg",
+    image: "./images/products/孤寂冰川.jpg",
     detail: "清新西柚与红茶的完美融合，主成分西柚",
     features: [
       "金酒、西柚汁、红茶、薄荷、苏打水、青柠汁",
@@ -206,7 +206,7 @@ export const products: Product[] = [
     id: "9",
     name: "菠萝生椰",
     description: "菠萝、椰汁 · 8%vol",
-    image: "/images/products/菠萝生椰.jpg",
+    image: "./images/products/菠萝生椰.jpg",
     detail: "热带清爽碰撞椰香尾韵，夜宵解腻神器",
     features: [
       "伏特加、菠萝汁、椰汁、青柠汁",
@@ -229,7 +229,7 @@ export const products: Product[] = [
     id: "10",
     name: "玛格丽特",
     description: "龙舌兰（经典烈款） · 20%vol",
-    image: "/images/products/莫吉托.jpg",
+    image: "./images/products/莫吉托.jpg",
     detail: "经典龙舌兰烈款，主成分龙舌兰，高端品鉴之选",
     features: [
       "龙舌兰、橙皮利口酒、青柠汁、柠檬汁",
@@ -252,7 +252,7 @@ export const products: Product[] = [
     id: "11",
     name: "荔枝普洱",
     description: "荔枝 · 5%vol",
-    image: "/images/products/妃子笑.jpg",
+    image: "./images/products/妃子笑.jpg",
     detail: "荔枝果香融合普洱底蕴，干净透亮显温柔",
     features: [
       "伏特加、荔枝汁、柠檬汁、苹果汁",
@@ -275,7 +275,7 @@ export const products: Product[] = [
     id: "12",
     name: "僵尸",
     description: "朗姆（经典烈款） · 13.8%vol",
-    image: "/images/products/僵尸.jpg",
+    image: "./images/products/僵尸.jpg",
     detail: "三重朗姆打造热带风暴，烈而不冲，勇敢者挑战",
     features: [
       "混合朗姆、柠檬汁、菠萝汁、橙子汁",
