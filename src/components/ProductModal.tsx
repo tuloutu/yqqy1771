@@ -1,6 +1,7 @@
 import { X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Product } from "../data/products";
+import { useT } from "../i18n/LanguageContext";
 
 interface ProductModalProps {
   product: Product;
@@ -8,6 +9,9 @@ interface ProductModalProps {
 }
 
 function ProductModal({ product, onClose }: ProductModalProps) {
+  const { t } = useT();
+  const m = t.productModal;
+
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50" onClick={onClose}>
       <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
@@ -27,7 +31,7 @@ function ProductModal({ product, onClose }: ProductModalProps) {
           <h2 className="text-4xl font-bold mb-4 text-[#333333] font-['PingFang_SC']">{product.name}</h2>
           <p className="text-xl text-gray-600 mb-6 leading-relaxed">{product.detail}</p>
           
-          <h3 className="text-2xl font-bold mb-4 text-[#333333] font-['PingFang_SC']">产品特点</h3>
+          <h3 className="text-2xl font-bold mb-4 text-[#333333] font-['PingFang_SC']">{m.features}</h3>
           <ul className="space-y-3 mb-8">
             {product.features.map((feature, index) => (
               <li key={index} className="flex items-center text-gray-700">
@@ -40,11 +44,11 @@ function ProductModal({ product, onClose }: ProductModalProps) {
           <div className="bg-gradient-to-r from-[#862828] to-[#6b1f1f] rounded-xl p-6 text-white">
             <div className="flex items-center justify-between">
               <div>
-                <div className="text-sm opacity-90 mb-1">品质保证</div>
-                <div className="text-2xl font-bold">30秒即刻出杯</div>
+                <div className="text-sm opacity-90 mb-1">{m.qualityAssurance}</div>
+                <div className="text-2xl font-bold">{m.quickOut}</div>
               </div>
               <Link to="/contact" className="bg-white text-[#862828] px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors">
-                联系合作
+                {m.contactUs}
               </Link>
             </div>
           </div>

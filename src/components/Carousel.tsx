@@ -2,8 +2,11 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { carouselItems } from "../data/carousel";
+import { useT } from "../i18n/LanguageContext";
 
 function Carousel() {
+  const { t } = useT();
+  const ca = t.carousel;
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -53,13 +56,13 @@ function Carousel() {
                     to="/products"
                     className="bg-[#862828] text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-[#6b1f1f] transition-colors"
                   >
-                    查看全部产品
+                    {ca.viewAll}
                   </Link>
                   <Link
                     to="/contact"
                     className="bg-white/20 backdrop-blur text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/30 transition-colors"
                   >
-                    联系我们
+                    {ca.contactUs}
                   </Link>
                 </div>
               </div>

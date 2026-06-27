@@ -2,6 +2,7 @@ import { HashRouter as Router, Routes, Route, useLocation } from "react-router-d
 import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import FloatingContact from "./components/FloatingContact";
 import HomePage from "./pages/HomePage";
 import ProductsPage from "./pages/ProductsPage";
 import TechnologyPage from "./pages/TechnologyPage";
@@ -9,11 +10,9 @@ import ContactPage from "./pages/ContactPage";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
-
   return null;
 }
 
@@ -32,6 +31,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <FloatingContact />
       </div>
     </Router>
   );

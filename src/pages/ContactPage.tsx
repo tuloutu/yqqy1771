@@ -1,17 +1,22 @@
+import { useT } from "../i18n/LanguageContext";
+
 function ContactPage() {
+  const { t } = useT();
+  const c = t.contact;
+
   return (
     <div className="min-h-screen pt-20">
       <div className="bg-[#862828] text-white py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4 font-['PingFang_SC']">联系我们</h1>
-          <p className="text-xl opacity-90">期待与您合作,共创美好未来</p>
+          <h1 className="text-5xl font-bold mb-4 font-['PingFang_SC']">{c.title}</h1>
+          <p className="text-xl opacity-90">{c.subtitle}</p>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-[#333333] font-['PingFang_SC']">联系方式</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-[#333333] font-['PingFang_SC']">{c.contactInfo}</h2>
             <div className="space-y-6">
               <div className="flex items-start">
                 <div className="w-12 h-12 bg-[#862828] bg-opacity-10 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
@@ -20,8 +25,8 @@ function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-bold text-xl mb-2 text-[#333333]">联系人</h3>
-                  <p className="text-gray-600 text-lg">郭经理</p>
+                  <h3 className="font-bold text-xl mb-2 text-[#333333]">{c.contactPerson}</h3>
+                  <p className="text-gray-600 text-lg">{c.contactPersonName}</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -31,9 +36,9 @@ function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-bold text-xl mb-2 text-[#333333]">电话</h3>
-                  <p className="text-gray-600 text-lg">15526386298</p>
-                  <p className="text-gray-500">(微信同号)</p>
+                  <h3 className="font-bold text-xl mb-2 text-[#333333]">{c.phone}</h3>
+                  <p className="text-gray-600 text-lg">{c.phoneNumber}</p>
+                  <p className="text-gray-500">{c.wechatSame}</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -43,8 +48,8 @@ function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-bold text-xl mb-2 text-[#333333]">邮箱</h3>
-                  <p className="text-gray-600 text-lg">gxh15526386298@163.com</p>
+                  <h3 className="font-bold text-xl mb-2 text-[#333333]">{c.email}</h3>
+                  <p className="text-gray-600 text-lg">{c.emailAddress}</p>
                 </div>
               </div>
               <div className="flex items-start">
@@ -55,77 +60,57 @@ function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="font-bold text-xl mb-2 text-[#333333]">地址</h3>
-                  <p className="text-gray-600 text-lg">长沙市开福区万达广场C2座3914</p>
+                  <h3 className="font-bold text-xl mb-2 text-[#333333]">{c.address}</h3>
+                  <p className="text-gray-600 text-lg">{c.addressDetail}</p>
                 </div>
               </div>
             </div>
           </div>
 
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-[#333333] font-['PingFang_SC']">关注我们</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-[#333333] font-['PingFang_SC']">{c.followUs}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6">
               <div className="bg-white rounded-xl p-5 md:p-6 shadow-lg hover:shadow-xl transition-shadow text-center flex flex-col items-center">
                 <div className="w-40 h-40 md:w-44 md:h-44 bg-[#f5f0f0] rounded-xl mb-4 overflow-hidden flex items-center justify-center p-3">
-                  <img 
-                    src="./Official Account.jpg" 
-                    alt="微信公众号二维码"
-                    className="max-w-full max-h-full object-contain"
-                  />
+                  <img src="./Official Account.jpg" alt={c.wechatOfficial} className="max-w-full max-h-full object-contain" />
                 </div>
-                <h3 className="font-bold text-base md:text-lg text-[#333333]">微信公众号</h3>
-                <p className="text-xs text-gray-400 mt-1">扫码关注公众号</p>
+                <h3 className="font-bold text-base md:text-lg text-[#333333]">{c.wechatOfficial}</h3>
+                <p className="text-xs text-gray-400 mt-1">{c.wechatOfficialTip}</p>
               </div>
               <div className="bg-white rounded-xl p-5 md:p-6 shadow-lg hover:shadow-xl transition-shadow text-center flex flex-col items-center">
                 <div className="w-40 h-40 md:w-44 md:h-44 bg-[#f5f0f0] rounded-xl mb-4 overflow-hidden flex items-center justify-center p-3">
-                  <img 
-                    src="./redbook.png" 
-                    alt="小红书二维码"
-                    className="max-w-full max-h-full object-contain"
-                  />
+                  <img src="./redbook.png" alt={c.redbook} className="max-w-full max-h-full object-contain" />
                 </div>
-                <h3 className="font-bold text-base md:text-lg text-[#333333]">小红书</h3>
-                <p className="text-xs text-gray-400 mt-1">扫码关注小红书</p>
+                <h3 className="font-bold text-base md:text-lg text-[#333333]">{c.redbook}</h3>
+                <p className="text-xs text-gray-400 mt-1">{c.redbookTip}</p>
               </div>
               <div className="bg-white rounded-xl p-5 md:p-6 shadow-lg hover:shadow-xl transition-shadow text-center flex flex-col items-center">
                 <div className="w-40 h-40 md:w-44 md:h-44 bg-[#f5f0f0] rounded-xl mb-4 overflow-hidden flex items-center justify-center p-3">
-                  <img 
-                    src="./foreign-wechat.png" 
-                    alt="海外客户联系微信"
-                    className="max-w-full max-h-full object-contain"
-                  />
+                  <img src="./foreign-wechat.png" alt={c.overseasWechat} className="max-w-full max-h-full object-contain" />
                 </div>
-                <h3 className="font-bold text-base md:text-lg text-[#333333]">海外客户微信</h3>
-                <p className="text-xs text-gray-400 mt-1">扫码添加微信</p>
+                <h3 className="font-bold text-base md:text-lg text-[#333333]">{c.overseasWechat}</h3>
+                <p className="text-xs text-gray-400 mt-1">{c.overseasWechatTip}</p>
               </div>
             </div>
             <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
-              <a 
-                href="https://wa.me/message/C2SODE3IHJDMM1" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105"
-              >
+              <a href="https://wa.me/message/C2SODE3IHJDMM1" target="_blank" rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 bg-gradient-to-r from-[#25D366] to-[#128C7E] text-white rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105">
                 <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                 </svg>
                 <div>
                   <span className="font-bold text-lg">WhatsApp</span>
-                  <p className="text-sm opacity-90">海外客户专线</p>
+                  <p className="text-sm opacity-90">{c.whatsappLine}</p>
                 </div>
               </a>
-              <a 
-                href="https://wa.me/message/C2SODE3IHJDMM1" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-3 bg-gradient-to-r from-[#862828] to-[#6b1f1f] text-white rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105"
-              >
+              <a href="https://wa.me/message/C2SODE3IHJDMM1" target="_blank" rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 bg-gradient-to-r from-[#862828] to-[#6b1f1f] text-white rounded-xl p-4 md:p-6 shadow-lg hover:shadow-xl transition-all hover:scale-105">
                 <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                 </svg>
                 <div>
-                  <span className="font-bold text-lg">WhatsApp 咨询</span>
-                  <p className="text-sm opacity-90">点击即可联系</p>
+                  <span className="font-bold text-lg">{c.whatsappConsult}</span>
+                  <p className="text-sm opacity-90">{c.whatsappConsultTip}</p>
                 </div>
               </a>
             </div>
@@ -133,64 +118,59 @@ function ContactPage() {
         </div>
 
         <div className="bg-gradient-to-br from-[#862828] to-[#6b1f1f] rounded-2xl p-12 text-white mb-16">
-          <h2 className="text-3xl font-bold mb-8 text-center font-['PingFang_SC']">合作商家</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center font-['PingFang_SC']">{c.partners}</h2>
           <div className="text-center mb-8">
             <div className="text-6xl font-bold mb-4">100+</div>
-            <p className="text-xl opacity-90">已有上百家酒水合作商家</p>
-            <p className="text-lg opacity-80 mt-4">覆盖清吧、精酿酒馆、烧烤城、火锅店等多种业态</p>
+            <p className="text-xl opacity-90">{c.partnersCount}</p>
+            <p className="text-lg opacity-80 mt-4">{c.partnersTypes}</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
             <div className="text-center">
               <div className="text-4xl font-bold mb-2">98%</div>
-              <div className="text-sm opacity-90">客户满意度</div>
+              <div className="text-sm opacity-90">{c.satisfaction}</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold mb-2">10万+</div>
-              <div className="text-sm opacity-90">累计出杯数</div>
+              <div className="text-sm opacity-90">{c.totalCups}</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold mb-2">30秒</div>
-              <div className="text-sm opacity-90">平均出杯时间</div>
+              <div className="text-sm opacity-90">{c.avgTime}</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold mb-2">12款</div>
-              <div className="text-sm opacity-90">产品风味</div>
+              <div className="text-sm opacity-90">{c.flavors}</div>
             </div>
           </div>
         </div>
 
         <div className="bg-gradient-to-br from-[#862828]/10 to-[#6b1f1f]/10 rounded-2xl p-6 md:p-12">
-          <h2 className="text-3xl font-bold mb-8 text-center font-['PingFang_SC']">关于"一起去也"</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center font-['PingFang_SC']">{c.about}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-[#862828]">品牌故事</h3>
-              <p className="text-lg leading-relaxed text-gray-700">
-                "一起去也"是国内首个机打鸡尾酒品牌,致力于通过自动化技术革新传统鸡尾酒制作方式。
-                我们相信,品质统一、即刻出杯的鸡尾酒,能够让更多人享受高品质的调酒体验。
-              </p>
-              <p className="text-lg leading-relaxed text-gray-700 mt-4">
-                拥有4家线下门店进行产品测试和迭代更新,确保选品基于大数据测试,
-                为合作伙伴提供经过市场验证的优质产品。
-              </p>
+              <h3 className="text-2xl font-bold mb-4 text-[#862828]">{c.brandStory}</h3>
+              <p className="text-lg leading-relaxed text-gray-700">{c.brandStory1}</p>
+              <p className="text-lg leading-relaxed text-gray-700 mt-4">{c.brandStory2}</p>
+              <p className="text-lg leading-relaxed text-gray-700 mt-4">{c.brandStory3}</p>
             </div>
             <div>
-              <h3 className="text-2xl font-bold mb-4 text-[#862828]">品牌理念</h3>
+              <h3 className="text-2xl font-bold mb-4 text-[#862828]">{c.brandIdea}</h3>
               <ul className="space-y-3 text-lg text-gray-700">
                 <li className="flex items-start">
                   <span className="text-[#D4AF37] mr-2">★</span>
-                  <span>品质统一:每一杯都达到相同标准</span>
+                  <span>{c.idea1}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#D4AF37] mr-2">★</span>
-                  <span>即刻出杯:30秒快速响应需求</span>
+                  <span>{c.idea2}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#D4AF37] mr-2">★</span>
-                  <span>技术革新:机打技术引领行业</span>
+                  <span>{c.idea3}</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-[#D4AF37] mr-2">★</span>
-                  <span>服务至上:客户满意是我们的追求</span>
+                  <span>{c.idea4}</span>
                 </li>
               </ul>
             </div>

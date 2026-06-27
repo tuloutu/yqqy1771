@@ -1,26 +1,39 @@
 import { useState } from "react";
 import { products, categories } from "../data/products";
 import ProductModal from "../components/ProductModal";
+import { useT } from "../i18n/LanguageContext";
 
 function ProductsPage() {
-  const [selectedCategory, setSelectedCategory] = useState("全部");
+  const { t } = useT();
+  const p = t.products;
+  const [selectedCategory, setSelectedCategory] = useState(p.all);
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
 
-  const filteredProducts = selectedCategory === "全部"
+  const filteredProducts = selectedCategory === p.all
     ? products
-    : products.filter(p => p.category === selectedCategory);
+    : products.filter(prod => prod.category === selectedCategory);
 
   return (
     <div className="min-h-screen pt-20">
       <div className="bg-[#862828] text-white py-16">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl font-bold mb-4 font-['PingFang_SC']">产品系列</h1>
-          <p className="text-xl opacity-90">精心调制,品质统一,即刻出杯</p>
+          <h1 className="text-5xl font-bold mb-4 font-['PingFang_SC']">{p.title}</h1>
+          <p className="text-xl opacity-90">{p.subtitle}</p>
         </div>
       </div>
 
       <div className="container mx-auto px-4 py-12">
         <div className="flex flex-wrap gap-4 mb-8">
+          <button
+            onClick={() => setSelectedCategory(p.all)}
+            className={`px-6 py-3 rounded-full font-medium transition-all ${
+              selectedCategory === p.all
+                ? "bg-[#862828] text-white"
+                : "bg-white text-gray-700 hover:bg-gray-100"
+            }`}
+          >
+            {p.all}
+          </button>
           {categories.map(category => (
             <button
               key={category}
@@ -57,7 +70,7 @@ function ProductsPage() {
                 </h3>
                 <p className="text-gray-600">{product.description}</p>
                 <button className="mt-4 text-[#862828] font-medium hover:underline">
-                  了解更多 →
+                  {p.learnMore}
                 </button>
               </div>
             </div>
