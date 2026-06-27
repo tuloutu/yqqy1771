@@ -1,17 +1,19 @@
 import { useState } from "react";
-import { products, categories } from "../data/products";
+import { products, categories, categoriesEn } from "../data/products";
 import ProductModal from "../components/ProductModal";
 import { useT } from "../i18n/LanguageContext";
 
 function ProductsPage() {
-  const { t } = useT();
+  const { t, lang } = useT();
+  const isZh = lang === "zh";
   const p = t.products;
-  const [selectedCategory, setSelectedCategory] = useState(p.all);
+  const catList = isZh ? categories : categoriesEn;
+  const [selectedCategory, setSelectedCategory] = useState(catList[0]);
   const [selectedProduct, setSelectedProduct] = useState<typeof products[0] | null>(null);
 
-  const filteredProducts = selectedCategory === p.all
+  const filteredProducts = selectedCategory === catList[0]
     ? products
-    : products.filter(prod => prod.category === selectedCategory);
+    : products.filter(prod => (isZh ? prod.category : prod.categoryEn) === selectedCategory);
 
   return (
     <div className="min-h-screen pt-20">
@@ -24,27 +26,17 @@ function ProductsPage() {
 
       <div className="container mx-auto px-4 py-12">
         <div className="flex flex-wrap gap-4 mb-8">
-          <button
-            onClick={() => setSelectedCategory(p.all)}
-            className={`px-6 py-3 rounded-full font-medium transition-all ${
-              selectedCategory === p.all
-                ? "bg-[#862828] text-white"
-                : "bg-white text-gray-700 hover:bg-gray-100"
-            }`}
-          >
-            {p.all}
-          </button>
-          {categories.map(category => (
+          {catList.map((cat: string) => (
             <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
               className={`px-6 py-3 rounded-full font-medium transition-all ${
-                selectedCategory === category
+                selectedCategory === cat
                   ? "bg-[#862828] text-white"
                   : "bg-white text-gray-700 hover:bg-gray-100"
               }`}
             >
-              {category}
+              {cat}
             </button>
           ))}
         </div>
@@ -64,11 +56,15 @@ function ProductsPage() {
                 />
               </div>
               <div className="p-6">
-                <span className="text-sm text-[#862828] font-medium">{product.category}</span>
+                <span className="text-sm text-[#862828] font-medium">
+                  {isZh ? product.category : product.categoryEn}
+                </span>
                 <h3 className="text-2xl font-bold mt-2 mb-2 text-[#333333] font-['PingFang_SC']">
-                  {product.name}
+                  {isZh ? product.name : product.nameEn}
                 </h3>
-                <p className="text-gray-600">{product.description}</p>
+                <p className="text-gray-600">
+                  {isZh ? product.description : product.descriptionEn}
+                </p>
                 <button className="mt-4 text-[#862828] font-medium hover:underline">
                   {p.learnMore}
                 </button>

@@ -5,9 +5,10 @@ import { carouselItems } from "../data/carousel";
 import { useT } from "../i18n/LanguageContext";
 
 function Carousel() {
-  const { t } = useT();
+  const { t, lang } = useT();
   const ca = t.carousel;
   const [currentIndex, setCurrentIndex] = useState(0);
+  const isZh = lang === "zh";
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -43,13 +44,13 @@ function Carousel() {
             <div className="container mx-auto px-4">
               <div className="max-w-2xl">
                 <div className="text-[#D4AF37] text-xl font-medium mb-4">
-                  {item.subtitle}
+                  {isZh ? item.subtitle : item.subtitleEn}
                 </div>
                 <h1 className="text-6xl font-bold text-white mb-6 font-['PingFang_SC'] leading-tight">
-                  {item.title}
+                  {isZh ? item.title : item.titleEn}
                 </h1>
                 <p className="text-2xl text-white/90 mb-8 leading-relaxed">
-                  {item.description}
+                  {isZh ? item.description : item.descriptionEn}
                 </p>
                 <div className="flex gap-4">
                   <Link

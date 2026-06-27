@@ -9,14 +9,16 @@ interface ProductModalProps {
 }
 
 function ProductModal({ product, onClose }: ProductModalProps) {
-  const { t } = useT();
+  const { t, lang } = useT();
+  const isZh = lang === "zh";
   const m = t.productModal;
+  const featList = isZh ? product.features : product.featuresEn;
 
   return (
     <div className="fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50" onClick={onClose}>
       <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
         <div className="relative">
-          <img src={product.image} alt={product.name} className="w-full h-96 object-cover" />
+          <img src={product.image} alt={isZh ? product.name : product.nameEn} className="w-full h-96 object-cover" />
           <button
             onClick={onClose}
             className="absolute top-4 right-4 bg-white rounded-full p-2 shadow-lg hover:bg-gray-100 transition-colors"
@@ -26,14 +28,18 @@ function ProductModal({ product, onClose }: ProductModalProps) {
         </div>
         <div className="p-8">
           <span className="inline-block px-4 py-1 bg-[#862828] text-white rounded-full text-sm font-medium mb-4">
-            {product.category}
+            {isZh ? product.category : product.categoryEn}
           </span>
-          <h2 className="text-4xl font-bold mb-4 text-[#333333] font-['PingFang_SC']">{product.name}</h2>
-          <p className="text-xl text-gray-600 mb-6 leading-relaxed">{product.detail}</p>
+          <h2 className="text-4xl font-bold mb-4 text-[#333333] font-['PingFang_SC']">
+            {isZh ? product.name : product.nameEn}
+          </h2>
+          <p className="text-xl text-gray-600 mb-6 leading-relaxed">
+            {isZh ? product.detail : product.detailEn}
+          </p>
           
           <h3 className="text-2xl font-bold mb-4 text-[#333333] font-['PingFang_SC']">{m.features}</h3>
           <ul className="space-y-3 mb-8">
-            {product.features.map((feature, index) => (
+            {featList.map((feature, index) => (
               <li key={index} className="flex items-center text-gray-700">
                 <div className="w-2 h-2 bg-[#862828] rounded-full mr-3 flex-shrink-0"></div>
                 <span className="text-lg">{feature}</span>
